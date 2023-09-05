@@ -6,5 +6,5 @@ def fizzbuzz():
                 print("FizzBuzz", end=" ")
             else:
                 print("Fizz" if i % 3 == 0 else "Buzz", end=" ")
-            else:
-                print(i, end=" ")
+        else:
+            print(i, end=" ")
