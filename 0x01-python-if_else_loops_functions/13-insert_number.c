@@ -4,7 +4,7 @@
  * insert_node - adds a new node to a sorted linked list
  *
  * @head: pointer to the head of the linked list
- * @n: data to add to new node
+ * @number: number to add to new node
  *
  * Return: address of new element
  * return NULL if failed.
@@ -25,7 +25,6 @@ listint_t *insert_node(listint_t **head, int number)
 		return (new_node);
 	}
 
-	/* case: number is the smallest in the list, append to begining of list */
 	if (number <= (*head)->n)
 	{
 		new_node->next = *head;
@@ -36,7 +35,6 @@ listint_t *insert_node(listint_t **head, int number)
 	curr = (*head)->next;
 	prev = *head;
 
-	/* loop through the list */
 	while (curr)
 	{
 		if (curr->n >= number)
@@ -49,7 +47,6 @@ listint_t *insert_node(listint_t **head, int number)
 		curr = curr->next;
 	}
 
-	/* case: number is the largest in the list */
 	prev->next = new_node;
 	return (new_node);
 }
