@@ -1,3 +1,4 @@
 #!/usr/bin/python3
-import subprocess
-subprocess.call('echo "#pythoniscool"', shell=True)
+if __name__ == "__main__":
+    import subprocess
+    subprocess.call('echo "#pythoniscool"', shell=True)
