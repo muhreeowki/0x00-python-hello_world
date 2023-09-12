@@ -1,4 +1,6 @@
 #!/usr/bin/python3
-print_reversed_list_integer = __import__('3-print_reversed_list_integer').print_reversed_list_integer
+multiple_returns = __import__('8-multiple_returns').multiple_returns
 
-print_reversed_list_integer()
+sentence = "At school, I learnt C!"
+length, first = multiple_returns(sentence)
+print("Length: {:d} - First character: {}".format(length, first))
