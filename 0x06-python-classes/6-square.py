@@ -17,15 +17,11 @@ class Square:
         else:
             raise TypeError("size must be an integer")
 
-        if isinstance(position, tuple):
-            if len(position) == 2 and position[0] >= 0 and position[1] >= 0:
-                self.__position = position
-            else:
-                raise TypeError("position must be a tuple of 2 positive integers")
+        if isinstance(position, tuple) and \
+                len(position) == 2 and position[0] >= 0 and position[1] >= 0:
+            self.__position = position
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
-
-
 
     @property
     def size(self):
@@ -47,8 +43,6 @@ class Square:
         else:
             raise TypeError("size must be an integer")
 
-
-
     def area(self):
         """Function to return the area of the square"""
         return self.__size * self.__size
@@ -59,7 +53,7 @@ class Square:
         """
         if self.__size != 0:
             for _ in range(self.__position[1]):
-                print();
+                print()
 
             for _ in range(self.__size):
                 for _ in range(self.__position[0]):
