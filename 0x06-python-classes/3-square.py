@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Task 2 """
+""" Task 3 """
 
 
 class Square:
@@ -18,3 +18,7 @@ class Square:
                 raise TypeError("size must be >= 0")
         else:
             raise TypeError("size must be an integer")
+
+    def area(self):
+        """Function to return the area of the square"""
+        return self.__size * self.__size
