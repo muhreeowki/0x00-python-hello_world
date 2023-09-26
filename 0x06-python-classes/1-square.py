@@ -5,9 +5,9 @@
 class Square:
     """This is a square class"""
 
-    def __init__(self, new_size):
+    def __init__(self, size):
         """This is the square constructor"""
         try:
-            self.__size = int(new_size)
+            self.__size = int(size)
         except Exception:
             self.__size = 0
