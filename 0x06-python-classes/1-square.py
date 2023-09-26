@@ -7,4 +7,10 @@ class Square:
 
     def __init__(self, new_size):
         """This is the square constructor"""
-        self.__size = new_size
+        try:
+            self.__size = int(new_size)
+        except Exception:
+            self.__size = 0
+
+sqr = Square("hello")
+print(sqr.__size)
