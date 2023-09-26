@@ -11,6 +11,3 @@ class Square:
             self.__size = int(new_size)
         except Exception:
             self.__size = 0
-
-sqr = Square("hello")
-print(sqr.__size)
