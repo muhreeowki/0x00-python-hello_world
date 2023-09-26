@@ -5,11 +5,9 @@
 class Square:
     """This is a square class"""
 
-    def __init__(self, size=0):
+    def __init__(self, size=0, position=(0, 0)):
         """
         This is the square constructor
-        it checks to see if the user size is valid...
-        if not it raises a TypeError
         """
         if isinstance(size, int):
             if size >= 0:
@@ -19,9 +17,15 @@ class Square:
         else:
             raise TypeError("size must be an integer")
 
-    def area(self):
-        """Function to return the area of the square"""
-        return self.__size * self.__size
+        if isinstance(position, tuple):
+            if len(position) == 2 and position[0] >= 0 and position[1] >= 0:
+                self.__position = position
+            else:
+                raise TypeError("position must be a tuple of 2 positive integers")
+        else:
+            raise TypeError("position must be a tuple of 2 positive integers")
+
+
 
     @property
     def size(self):
@@ -43,14 +47,25 @@ class Square:
         else:
             raise TypeError("size must be an integer")
 
+
+
+    def area(self):
+        """Function to return the area of the square"""
+        return self.__size * self.__size
+
     def my_print(self):
         """
         Function to print the square to stdout with "#"
         """
         if self.__size != 0:
+            for _ in range(self.__position[1]):
+                print();
+
             for _ in range(self.__size):
+                for _ in range(self.__position[0]):
+                    print(' ', end="")
                 for _ in range(self.__size):
-                    print("#", end="")
-                print()
+                    print('#', end="")
+                print('')
         else:
-            print()
+            print('')
