@@ -1,14 +1,18 @@
 #!/usr/bin/python3
-Square = __import__('6-square').Square
+SinglyLinkedList = __import__('100-singly_linked_list').SinglyLinkedList
 
-my_square_1 = Square(3)
-my_square_1.my_print()
-print(my_square_1.position)
-
-print("--")
-
-my_square_3 = Square(3, (1, ))
-my_square_3.my_print()
-print(my_square_3.position)
-
-print("--")
+sll = SinglyLinkedList()
+sll.sorted_insert(2)
+print(sll)
+"""
+sll.sorted_insert(5)
+sll.sorted_insert(3)
+sll.sorted_insert(10)
+sll.sorted_insert(1)
+sll.sorted_insert(-4)
+sll.sorted_insert(-3)
+sll.sorted_insert(4)
+sll.sorted_insert(5)
+sll.sorted_insert(12)
+sll.sorted_insert(3)
+"""
