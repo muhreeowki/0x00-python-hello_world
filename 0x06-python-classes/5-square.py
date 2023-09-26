@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Task 4 """
+""" Task 5 """
 
 
 class Square:
@@ -42,3 +42,12 @@ class Square:
                 raise TypeError("size must be >= 0")
         else:
             raise TypeError("size must be an integer")
+
+    def my_print(self):
+        if self.__size != 0:
+            for _ in range(self.__size):
+                for _ in range(self.__size):
+                    print("#", end="")
+                print()
+        else:
+            print()
