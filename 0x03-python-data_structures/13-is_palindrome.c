@@ -35,6 +35,8 @@ int is_palindrome(listint_t **head)
 			return(0);
 		node = node->next;
 	}
+
+	free_listint(stack);
 	return (1);
 }
 
