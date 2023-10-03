@@ -3,8 +3,9 @@
     This module contains the 'print_square' function from task 2
 """
 
+
 def print_square(size):
-    """ 
+    """
     Function that prints a square of size 'size'
 
     Args:

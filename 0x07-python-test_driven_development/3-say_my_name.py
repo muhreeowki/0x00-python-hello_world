@@ -3,8 +3,9 @@
     This module contains the 'say_my_name' function from task 2
 """
 
+
 def say_my_name(first_name, last_name=""):
-    """ 
+    """
     Function that prints My name is <first name> <last name>
 
     Args:

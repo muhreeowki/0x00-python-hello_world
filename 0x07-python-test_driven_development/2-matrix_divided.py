@@ -3,8 +3,9 @@
     This module contains the 'matrix_divided' function from task 1
 """
 
+
 def matrix_divided(matrix, div):
-    """ 
+    """
     Function that divides the integer/float numbers of a matrix
 
     Args:
@@ -25,18 +26,21 @@ def matrix_divided(matrix, div):
     """
 
     if len(matrix) == 0 or matrix is None:
-            raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError("matrix must be a matrix \
+                (list of lists) of integers/floats")
 
     length = len(matrix[0])
 
     for row in matrix:
-        if type(row) is not list: 
-            raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        if type(row) is not list:
+            raise TypeError("matrix must be a matrix (list of lists) \
+                    of integers/floats")
         if len(row) != length:
             raise TypeError("Each row of the matrix must have the same size")
         for col in row:
             if type(col) not in [int, float]:
-                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+                raise TypeError("matrix must be a matrix \
+                        (list of lists) of integers/floats")
 
     if type(div) not in [int, float]:
         raise TypeError("div must be a number")

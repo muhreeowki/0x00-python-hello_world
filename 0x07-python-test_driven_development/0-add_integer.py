@@ -2,6 +2,8 @@
 """
     This module contains the 'add_integer' function from task 0
 """
+
+
 def add_integer(a, b=98):
     """
         Funtion to add two numbers together
