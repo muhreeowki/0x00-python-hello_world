@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 """ Task 7 """
 
+
 class Node:
     """Defines a node of a singly linked list"""
 
     def __init__(self, data, next_node=None):
         """Constructor"""
-        if type(data) is int:
+        if isinstance(data, int):
             self.__data = data
         else:
             raise TypeError("data must be an integer")
@@ -43,6 +44,7 @@ class Node:
         else:
             TypeError("next_node must be a Node object")
 
+
 class SinglyLinkedList:
     """Defines a singly linked list"""
 
@@ -52,29 +54,44 @@ class SinglyLinkedList:
 
     def __str__(self):
         """Function to display the list"""
+        nums = []
         node = self.__head
-        while node is not None:
-            print(node.data)
+        while isinstance(node, Node):
+            nums.append(str(node.data))
             node = node.next_node
+        return "\n".join(nums)
 
-    def sorted_insert(self, value):
-        """Function to add to the list"""
-        node = self.__head
+    def add_end(self, value):
         new_node = Node(value)
 
         if self.__head is None:
             self.__head = new_node
             return
 
-        if self.__head.data >= value:
-            new_node.next_node = self.__head
-            self.__head = new_node
+        node = self.__head
+
+        while isinstance(node.next_node, Node):
+            node = node.next_node
+
+        node.next_node = Node(value)
+        print(value)
+
+    def sorted_insert(self, value):
+        """Function to add to the list"""
+
+        if self.__head is None:
+            self.__head = Node(value)
             return
 
-        while node:
-            next_node = node.next_node
-            if next_node and next_node.data < value:
-                node = next_node
-            else: 
-                new_node.next_node = node.next_node
-                node.next_node = new_node
+        if self.__head.data >= value:
+            self.__head = Node(value, self.__head)
+            return
+
+        next_node = self.__head.next_node
+        while next_node is not None:
+            next_node = curr_node.next_node
+            if curr_node.data < value:
+                curr_node = next_node
+            else:
+                curr_node.next_node = Node(value, curr_node.next_node)
+                break

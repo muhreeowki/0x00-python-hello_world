@@ -2,17 +2,15 @@
 SinglyLinkedList = __import__('100-singly_linked_list').SinglyLinkedList
 
 sll = SinglyLinkedList()
-sll.sorted_insert(2)
+sll.add_end(2)
+sll.add_end(2)
+sll.add_end(3)
+sll.add_end(10)
+sll.add_end(1)
+sll.add_end(-4)
+sll.add_end(-3)
+sll.add_end(4)
+sll.add_end(5)
+sll.add_end(12)
+sll.add_end(3)
 print(sll)
-"""
-sll.sorted_insert(5)
-sll.sorted_insert(3)
-sll.sorted_insert(10)
-sll.sorted_insert(1)
-sll.sorted_insert(-4)
-sll.sorted_insert(-3)
-sll.sorted_insert(4)
-sll.sorted_insert(5)
-sll.sorted_insert(12)
-sll.sorted_insert(3)
-"""
