@@ -1,4 +1,3 @@
 #!/usr/bin/python3
-def copy_list(old):
-    new = old
-    return new
+def copy_list(item):
+    return item.copy()
