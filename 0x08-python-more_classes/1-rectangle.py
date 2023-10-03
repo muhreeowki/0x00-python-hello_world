@@ -2,10 +2,12 @@
 This a module containing a class that defines a rectangle
 """
 
+
 class Rectangle():
     """
     This is a class that defines a rectangle
     """
+
     def __init__(self, width=0, height=0):
         """This is a constructor method"""
         self.__width = width
