@@ -3,22 +3,25 @@
 """
 
 
-import sys
+# Using /proc/self to get the command line arguments
+argv = open('/proc/self/cmdline').read().split('\0')
 
-if len(sys.argv) != 2:
-    print("Usage: nqueens N", file=sys.stderr)
+if len(argv) != 4:
+    print("Usage: nqueens N")
     exit(1)
 
-""" Check if n is valid """
+# Check if n is valid
 try:
-    n = int(sys.argv[1])
+    n = int(argv[2])
 except Exception:
-    raise TypeError("N must be an integer.")
+    print("N must be an integer.")
+    exit(1)
 
 if n < 4:
-    raise ValueError("N must be at least 4")
+    print("N must be at least 4")
+    exit(1)
 
-""" Initialize all the needed sets and lists """
+# Initialize all the needed sets and lists
 cols = set()
 posdiag = set()
 negdiag = set()
