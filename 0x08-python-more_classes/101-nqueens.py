@@ -13,7 +13,7 @@ if len(sys.argv) != 2:
 try:
     n = int(sys.argv[1])
 except Exception:
-    print("N must be an integer.")
+    print("N must be a number.")
     exit(1)
 
 if n < 4:
