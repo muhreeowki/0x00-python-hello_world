@@ -3,16 +3,15 @@
 """
 
 
-# Using /proc/self to get the command line arguments
-argv = open('/proc/self/cmdline').read().split('\0')
+import sys
 
-if len(argv) != 4:
+if len(sys.argv) != 2:
     print("Usage: nqueens N")
     exit(1)
 
 # Check if n is valid
 try:
-    n = int(argv[2])
+    n = int(sys.argv[1])
 except Exception:
     print("N must be an integer.")
     exit(1)
