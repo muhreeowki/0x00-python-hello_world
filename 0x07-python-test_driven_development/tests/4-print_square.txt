@@ -1,0 +1,39 @@
+The ``4-print_square`` module
+============================
+
+Using ``print_square``
+---------------------
+Importing matrix_divided function
+	>>> print_square = __import__('4-print_square').print_square
+
+Testing square of size 4
+	>>> print_square(4)
+	####
+	####
+	####
+	####
+
+Testing square of size 10
+	>>> print_square(10)
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+
+Testing square of size 0
+	>>> print_square(0)
+
+Testing square of size 1
+	>>> print_square(1)
+	#
+
+Testing square of size -1
+	>>> print_square(-1)
+	Traceback (most recent call last):
+	TypeError: size must be >= 0

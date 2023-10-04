@@ -1,0 +1,21 @@
+The ``5-text_indentation`` module
+=================================
+
+Using ``text_indentation``
+--------------------------
+Importing matrix_divided function
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Testing string 1
+	>>> text_indentation("hello? world: my name is. John?? Swag")
+	hello?
+	<BLANKLINE>
+	world:
+	<BLANKLINE>
+	my name is.
+	<BLANKLINE>
+	John?
+	<BLANKLINE>
+	?
+	<BLANKLINE>
+	Swag
