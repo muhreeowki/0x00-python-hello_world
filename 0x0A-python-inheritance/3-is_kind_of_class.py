@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 Module that contains is_kind_of_class function
 """

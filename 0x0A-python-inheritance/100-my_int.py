@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Module that contains a Class called Sqaure"""
 
 
