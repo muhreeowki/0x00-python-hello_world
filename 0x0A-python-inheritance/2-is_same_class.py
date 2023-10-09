@@ -1,6 +1,5 @@
 """
 Module that contains is_same_class function
-that checks if an object is in a specified class
 """
 
 
