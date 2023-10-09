@@ -2,7 +2,7 @@
 
 
 class BaseGeometry():
-    """This is a geometry class"""
+    """This is a class that represents geometric objects"""
 
     def area(self):
         """
