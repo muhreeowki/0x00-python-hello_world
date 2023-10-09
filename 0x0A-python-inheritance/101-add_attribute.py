@@ -4,7 +4,7 @@
 
 def add_attribute(obj, name, value):
     """Function that adds a new attribute to an object if it’s possible"""
-    try:
-        obj.name = value
-    except Exception:
+    if '__slots__' in dir(obj) or '__dict__' not in dir(obj):
         raise TypeError("can't add new attribute")
+    else:
+        obj.name = value
