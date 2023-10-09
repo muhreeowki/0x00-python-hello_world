@@ -3,7 +3,7 @@
 
 class MyInt(int):
     """
-    Subclass that inherits from int
+    Subclass that inherits int
     """
     def __eq__(self, value):
         """

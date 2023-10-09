@@ -1,4 +1,4 @@
-"""Module that contains a Class called MyList inherited from the list class"""
+"""Module that contains a Class called MyList that inherits the list class"""
 
 
 class MyList(list):
