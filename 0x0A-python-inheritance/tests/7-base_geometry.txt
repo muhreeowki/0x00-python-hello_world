@@ -4,7 +4,7 @@ The ``7-base_geometry`` module
 Using ``BaseGeometry Class``
 ---------------------
 
-Import the MyList Class
+Use the MyList Class
 	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 Create an instance of MyList
