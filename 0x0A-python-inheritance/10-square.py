@@ -1,11 +1,10 @@
 """Module that contains a Class called Sqaure"""
-
-
 Rectangle = __import__("9-rectangle").Rectangle
+
 
 class Square(Rectangle):
     """
-    Class that represents a square
+    Subclass of Rectangle class that represents a square
     """
     def __init__(self, size):
         """Constructor method"""

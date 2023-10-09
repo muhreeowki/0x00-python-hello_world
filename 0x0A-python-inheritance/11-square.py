@@ -1,7 +1,6 @@
 """Module that contains a Class called Sqaure"""
-
-
 Rectangle = __import__("9-rectangle").Rectangle
+
 
 class Square(Rectangle):
     """
