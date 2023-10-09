@@ -10,10 +10,10 @@ class MyInt(int):
         """
         Checks if the int object is not equal to the value
         """
-        return self != value
+        return int(self) != value
 
     def __ne__(self, value):
         """
         Checks if the int object is equal to the value
         """
-        return self == value
+        return int(self) == value

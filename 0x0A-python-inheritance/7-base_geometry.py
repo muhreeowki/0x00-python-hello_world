@@ -2,7 +2,7 @@
 """Module that contains a Class called BaseGeometry"""
 
 
-class BaseGeometry():
+class BaseGeometry:
     """This is a class that represents geometric objects"""
 
     def area(self):
