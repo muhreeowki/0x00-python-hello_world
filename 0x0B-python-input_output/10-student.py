@@ -16,9 +16,12 @@ class Student:
         if isinstance(attrs, list) and len(attrs) > 0:
             attrs_to_return = {}
             for attr in attrs:
-                if attr in self.__dict__:
-                    attrs_to_return[attr] = self.__dict__[attr]
+                if type(attr) is str:
+                    if attr in self.__dict__:
+                        attrs_to_return[attr] = self.__dict__[attr]
+                else:
+                    return self.__dict__
             return attrs_to_return
-
         else:
             return self.__dict__
+            
