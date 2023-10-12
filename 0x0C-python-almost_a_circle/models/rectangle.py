@@ -86,9 +86,17 @@ class Rectangle(Base):
         if args and length > 0:
             rect_args = ["id", "width", "height", "x", "y"]
             for i in range(length):
-                self.validate(rect_args[i], args[i])
                 setattr(self, rect_args[i], args[i])
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
 
+    def to_dictionary(self):
+        convert = {
+                "_Rectangle__width": "width",
+                "_Rectangle__height": "height",
+                "_Rectangle__x": "x",
+                "_Rectangle__y": "y",
+                "id": "id"
+            }
+        return {convert[key] : value for key, value in self.__dict__.items()}
