@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Module containing base class"""
-from models.base import Rectangle
 import csv
 
 
@@ -17,9 +16,9 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """Returns the JSON string representation of list_dictionaries"""
-        if list_dictionaries:
-            return json.dumps(list_dictionaries)
-        return []
+        if list_dictionaries is None or list_dictionaries != []:
+            return []
+        return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -44,7 +43,7 @@ class Base:
         Creates a new instance from the class 'cls' and instanciates
         it with the attributes in 'dictionary'
         """
-        instance = Rectangle(10, 10)
+        instance = cls(10, 10)
         instance.update(**dictionary)
         return instance
 
@@ -59,7 +58,7 @@ class Base:
             with open("{}.json".format(cls.__name__), 'r') as f:
                 dictionary_list = cls.from_json_string(f.read())
                 for d in dictionary_list:
-                    instance_list.append(Rectangle.create(**d))
+                    instance_list.append(cls.create(**d))
         except FileNotFoundError:
             pass
         return instance_list
