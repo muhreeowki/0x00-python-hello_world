@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module containing base class"""
 from models.base import Rectangle
+import csv
 
 
 class Base:
@@ -59,6 +60,21 @@ class Base:
                 dictionary_list = cls.from_json_string(f.read())
                 for d in dictionary_list:
                     instance_list.append(Rectangle.create(**d))
+        except FileNotFoundError:
+            pass
+        return instance_list
+
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        Returns a list of instances that were stored
+        in a json file
+        """
+        instance_list = []
+        try:
+            with open("{}.csv".format(cls.__name__), 'r') as f:
+                reader = csv.DictReader(f)
         except FileNotFoundError:
             pass
         return instance_list
