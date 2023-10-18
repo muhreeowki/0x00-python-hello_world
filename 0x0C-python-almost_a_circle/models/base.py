@@ -36,7 +36,7 @@ class Base:
         Creates a new instance from the class 'cls' and instanciates
         it with the attributes in 'dictionary'
         """
-        instance = cls(10, 10)
+        instance = cls(10, 10) if cls.__name__ == "Rectangle" else cls(10)
         instance.update(**dictionary)
         return instance
 
