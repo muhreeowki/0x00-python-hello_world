@@ -11,7 +11,7 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        return "[Square] ({:d}) {:d}/{:d} - {:d}".format(
+        return "[Square] ({}) {}/{} - {}".format(
                 self.id, self.x, self.y, self.width)
 
     @property
@@ -29,7 +29,18 @@ class Square(Rectangle):
         if args and length > 0:
             sqr_args = ["id", "size", "x", "y"]
             for i in range(length):
-                setattr(self, sqr_args[i], args[i])
+                if i < 4:
+                    setattr(self, sqr_args[i], args[i])
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        convert = {
+                "_Rectangle__width": "size",
+                "_Rectangle__height": "size",
+                "_Rectangle__x": "x",
+                "_Rectangle__y": "y",
+                "id": "id"
+            }
+        return {convert[key] : value for key, value in self.__dict__.items()}

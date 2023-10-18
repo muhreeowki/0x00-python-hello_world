@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module containing base class"""
 import csv
+import json
 
 
 class Base:
@@ -10,15 +11,16 @@ class Base:
 
     def __init__(self, id=None):
         """Constructor method"""
-        Base.__nb_objects += 1
-        self.id = id if id is not None else Base.__nb_objects
+        if id is None:
+            Base.__nb_objects += 1
+        self.id = id if id else Base.__nb_objects
 
     @staticmethod
     def to_json_string(list_dictionaries):
         """Returns the JSON string representation of list_dictionaries"""
-        if list_dictionaries is None or list_dictionaries != []:
-            return []
-        return str(json.dumps(list_dictionaries))
+        if list_dictionaries is None or list_dictionaries == []:
+            return json.dumps([])
+        return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):

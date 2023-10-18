@@ -19,7 +19,7 @@ class Rectangle(Base):
         self.__y = y
 
     def __str__(self):
-        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
                 self.id, self.__x, self.__y, self.__width, self.__height)
 
     @property
@@ -86,7 +86,8 @@ class Rectangle(Base):
         if args and length > 0:
             rect_args = ["id", "width", "height", "x", "y"]
             for i in range(length):
-                setattr(self, rect_args[i], args[i])
+                if i < 5:
+                    setattr(self, rect_args[i], args[i])
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
