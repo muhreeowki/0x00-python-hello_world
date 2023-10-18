@@ -29,7 +29,7 @@ class Base:
         if json_string is not None and json_string != "":
             json_list = json.loads(json_string)
         return json_list
-        
+
     @classmethod
     def create(cls, **dictionary):
         """
@@ -66,12 +66,11 @@ class Base:
             pass
         return instance_list
 
-
     @classmethod
     def load_from_file_csv(cls):
         """
         Returns a list of instances that were stored
-        in a json file
+        in a csv file
         """
         try:
             objs_list = []
@@ -79,7 +78,7 @@ class Base:
                 reader = csv.DictReader(f)
                 for obj_dict in reader:
                     for key, value in obj_dict.items():
-                         obj_dict[key] = int(value)
+                        obj_dict[key] = int(value)
                     objs_list.append(cls.create(**obj_dict))
                 return objs_list
         except FileNotFoundError:
@@ -88,7 +87,7 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """Saves a json representation of a list of objects to a file"""
+        """Saves a csv representation of a list of objects to a file"""
         with open("{}.csv".format(cls.__name__), "w") as f:
             if list_objs and len(list_objs) != 0:
                 fields = list_objs[0].to_dictionary().keys()
