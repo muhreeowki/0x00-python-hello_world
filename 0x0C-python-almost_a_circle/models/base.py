@@ -2,6 +2,7 @@
 """Module containing base class"""
 import csv
 import json
+import turtle
 
 
 class Base:
@@ -96,3 +97,44 @@ class Base:
                 writer.writerows([obj.to_dictionary() for obj in list_objs])
             else:
                 f.write("[]")
+
+    def draw(list_rectangles, list_squares):
+        """
+        Opens a window and draws all the Rectangles and Squares
+        provided in the lists: list_rectangles and list_squares
+        """
+        t = turtle.Turtle()
+        t.penup()
+        t.goto(-280, 200)
+        t.color("black", "red")
+        start = 0
+        for rect in list_rectangles:
+            if start != 0:
+                t.forward(rect.width)
+                start = 1
+            t.pendown()
+            t.begin_fill()
+            for _ in range(2):
+                t.forward(rect.width)
+                t.left(90)
+                t.forward(rect.height)
+                t.left(90)
+            t.end_fill()
+            t.penup()
+            t.forward(rect.width * 1.5)
+
+        t.goto(-280, 0)
+        t.color("black", "blue")
+
+        for square in list_squares:
+            if start != 0:
+                t.forward(square.width)
+                start = 1
+            t.pendown()
+            t.begin_fill()
+            for _ in range(4):
+                t.forward(square.size)
+                t.left(90)
+            t.end_fill()
+            t.penup()
+            t.forward(square.width * 1.5)
