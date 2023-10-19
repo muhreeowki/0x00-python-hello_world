@@ -59,7 +59,7 @@ class Base:
         """
         instance_list = []
         try:
-            with open("{}.json".format(cls.__name__), 'r') as f:
+            with open("{}.json".format(cls.__name__), "r") as f:
                 dictionary_list = cls.from_json_string(f.read())
                 for d in dictionary_list:
                     instance_list.append(cls.create(**d))
@@ -75,7 +75,7 @@ class Base:
         """
         try:
             objs_list = []
-            with open("{}.csv".format(cls.__name__), 'r') as f:
+            with open("{}.csv".format(cls.__name__), "r") as f:
                 reader = csv.DictReader(f)
                 for obj_dict in reader:
                     for key, value in obj_dict.items():
@@ -105,36 +105,21 @@ class Base:
         """
         t = turtle.Turtle()
         t.penup()
-        t.goto(-280, 200)
-        t.color("black", "red")
-        start = 0
+        t.color("black")
         for rect in list_rectangles:
-            if start != 0:
-                t.forward(rect.width)
-                start = 1
+            t.goto(rect.x, rect.y)
             t.pendown()
-            t.begin_fill()
             for _ in range(2):
                 t.forward(rect.width)
                 t.left(90)
                 t.forward(rect.height)
                 t.left(90)
-            t.end_fill()
             t.penup()
-            t.forward(rect.width * 1.5)
-
-        t.goto(-280, 0)
-        t.color("black", "blue")
 
         for square in list_squares:
-            if start != 0:
-                t.forward(square.width)
-                start = 1
+            t.goto(square.x, square.y)
             t.pendown()
-            t.begin_fill()
             for _ in range(4):
                 t.forward(square.size)
                 t.left(90)
-            t.end_fill()
             t.penup()
-            t.forward(square.width * 1.5)
