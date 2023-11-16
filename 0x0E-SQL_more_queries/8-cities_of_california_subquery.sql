@@ -2,5 +2,5 @@
 SELECT id, name FROM cities 
 WHERE stated_id IN (
   SELECT id FROM states 
-  WHERE name = 'California'
-) ORDER BY id ASC;
+  WHERE name LIKE 'California'
+) ORDER BY id;
