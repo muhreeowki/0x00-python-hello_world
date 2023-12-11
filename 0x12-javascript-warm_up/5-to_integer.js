@@ -3,5 +3,6 @@ const argv = process.argv;
 const number = Number(argv[2]);
 if (isNaN(number)) {
   console.log('Not a number');
+} else {
+  console.log(number);
 }
-console.log(number);
