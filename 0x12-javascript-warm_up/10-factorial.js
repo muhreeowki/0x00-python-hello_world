@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const argv = process.argv;
 const number = Number(argv[2]);
-function factorial(x) {
+function factorial (x) {
   if (x <= 1 || isNaN(x)) {
     return 1;
   }
