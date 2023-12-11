@@ -1,4 +1,4 @@
-#!/usr/local/bin/node
+#!/usr/bin/node
 const argv = process.argv;
 const size = Number(argv[2]);
 if (!isNaN(size) && size > 0) {
