@@ -1,4 +1,4 @@
-#!/usr/local/bin/node
+#!/usr/bin/node
 const argv = process.argv;
 const numbers = argv.map((val) => Number(val)).filter((val) => !isNaN(val));
 numbers.splice(numbers.indexOf(Math.max(...numbers)), 1);
