@@ -19,7 +19,7 @@ if __name__ == "__main__":
     )
     cur = db.cursor()
     cur.execute(
-        "SELECT * FROM states WHERE name='{}'".format(state_name),
+        "SELECT * FROM states WHERE name='{}' ORDER BY states.id".format(state_name),
     )
     rows = cur.fetchall()
     for row in rows:
