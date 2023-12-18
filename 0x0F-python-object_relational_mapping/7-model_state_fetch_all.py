@@ -5,9 +5,10 @@ in the states table of hbtn_0e_0_usa where
 name matches the argument.
 """
 from sqlalchemy import create_engine
+import sys
+
 from sqlalchemy.orm import Session
 from model_state import Base, State
-import sys
 
 if __name__ == "__main__":
     engine = create_engine(
@@ -21,4 +22,4 @@ if __name__ == "__main__":
     with Session(engine) as session:
         result = session.query(State).all()
         for row in result:
-            print("{}: {}".format(row.id, row.name))
+            print(row)
