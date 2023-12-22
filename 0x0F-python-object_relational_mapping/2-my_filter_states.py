@@ -9,7 +9,6 @@ import sys
 
 
 if __name__ == "__main__":
-    state_name = sys.argv[4]
     db = MySQLdb.connect(
         host="localhost",
         user=sys.argv[1],
@@ -18,13 +17,7 @@ if __name__ == "__main__":
         port=3306,
     )
     cur = db.cursor()
-    cur.execute(
-        """
-        SELECT * FROM states WHERE COLLAT name LIKE('{}') ORDER BY id
-        """.format(
-            state_name
-        ),
-    )
+    cur.execute("SELECT * FROM states WHERE name LIKE BINARY '{}'".format(sys.argv[4]))
     rows = cur.fetchall()
     for row in rows:
         print(row)
