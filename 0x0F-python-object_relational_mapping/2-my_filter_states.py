@@ -20,7 +20,7 @@ if __name__ == "__main__":
     cur = db.cursor()
     cur.execute(
         """
-        SELECT * FROM states WHERE name='{}' ORDER BY id
+        SELECT * FROM states WHERE name LIKE('{}') ORDER BY id
         """.format(
             state_name
         ),
