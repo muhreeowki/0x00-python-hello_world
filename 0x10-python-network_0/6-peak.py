@@ -5,6 +5,8 @@
 def find_peak(list_of_integers):
     """Function that finds the peak in a list"""
     j = len(list_of_integers) - 1
+    if j < 0:
+        return None
     peak = float("-inf")
     for i in range(j):
         if i > j:
