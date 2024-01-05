@@ -4,14 +4,16 @@
 
 def find_peak(list_of_integers):
     """Function that finds the peak in a list"""
-    j = len(list_of_integers) - 1
-    if j < 0:
+    if len(list_of_integers) == 0:
         return None
     peak = float("-inf")
-    for i in range(j):
-        if i > j:
-            break
-        peak = list_of_integers[j] if peak < list_of_integers[j] else peak
-        peak = list_of_integers[i] if peak < list_of_integers[i] else peak
-        j -= 1
+    for i in range(0, len(list_of_integers), 3):
+        triplet = []
+        triplet.append(list_of_integers[i])
+        if i > 0:
+            triplet.append(list_of_integers[i - 1])
+        if i < len(list_of_integers) - 1:
+            triplet.append(list_of_integers[i + 1])
+        peak = max(triplet)
+
     return peak
