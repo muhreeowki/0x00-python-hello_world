@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Task 0 Module"""
-if __name__ == "__main__":
-    import urllib.request
+import urllib.request
 
+if __name__ == "__main__":
     url = "https://alx-intranet.hbtn.io/status"
     with urllib.request.urlopen(url) as response:
         content = response.read()
