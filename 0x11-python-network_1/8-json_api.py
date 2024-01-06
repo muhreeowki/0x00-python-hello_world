@@ -10,7 +10,7 @@ if __name__ == "__main__":
     response = requests.post(url=url, data={"q": q})
     try:
         data = response.json()
-        if len(data["id"]) > 0:
+        if data != {}:
             print("[{}] {}".format(data.get("id"), data.get("name")))
         else:
             print("No result")
