@@ -10,9 +10,9 @@ if __name__ == "__main__":
     response = requests.post(url=url, data={"q": q})
     try:
         data = response.json()
-        if data != {}:
-            print("[{}] {}".format(data.get("id"), data.get("name")))
-        else:
+        if data == {}:
             print("No result")
-    except requests.exceptions.JSONDecodeError:
+        else:
+            print("[{}] {}".format(data.get("id"), data.get("name")))
+    except Exception:
         print("Not a valid JSON")
